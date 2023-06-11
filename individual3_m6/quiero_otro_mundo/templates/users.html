@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo Quiero otro mundo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{% static  'style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    {% block content %}
+    <section id="hero" class="text-start" style="list-style: none;">
+        <div class="hero-content">
+            <h1>Ellos ya son parte de este hermoso proyecto para salvar el mundo.</h1>
+            <ul class="text-decoration-none" style="list-style: none;">
+                {% for user in users %}
+                
+                <li>{{ user.username }}</li>
+                <li>{{ user.name }} {{ user.surname }}</li>
+                <li>{{ user.email }}</li>
+                <hr>
+                {% endfor %}
+            </ul>
+            <h3>Tambien pueder ser parte de este hermoso proyecto <a href="/register.html/" class="btn disabled">uniendote</a></h3> 
+        </div>
+    </section>
+    {% endblock%}
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

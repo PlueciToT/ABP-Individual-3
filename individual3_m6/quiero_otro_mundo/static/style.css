@@ -1,0 +1,94 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  /* Estilos del encabezado */
+  header {
+    background-color: #2c3e50;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Estilos del contenido principal */
+  #hero {
+    background-color: #27ae60;
+    padding: 100px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  #hero h2 {
+    margin: 0;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  #hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  /* #404 {
+    background-color: #27ae60;
+    padding: 100px;
+    color: #fff;
+    text-align: center;
+  } */
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #27ae60;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #2ecc71;
+  }
+  
+  /* Estilos del pie de página */
+  footer {
+    background-color: #34495e;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
