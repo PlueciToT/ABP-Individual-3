@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo Quiero otro mundo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{% static  'style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    {% block content %}
+    <section id="hero">
+        <div class="container text-start">
+                <img src="{% static 'images/YQOM_Logo.png'%}" alt="YQOM_Logo" width="100px">
+            <div class="row mt-5">
+                <div class="col">
+                    <p class="h1 fs-1 col-9">Todo comienza al convertirte en miembro de Yo quiero otro Mundo.</p>
+                    <div class="col-10">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">Nombre de usuario:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <p class="my-3"><button type="submit" class="btn btn-primary">Registrarse</button></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+    {% endblock%}
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
