@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Te Lo Vendo</title>
+    <link href="{% static  'style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    {% block content %}
+    <section id="hero">
+        <img src="{% static 'images/giphy.gif' %}" alt="saludo" width="300px" class="align-content-start">        
+    <div class="container text-center">
+        <p class="fs-2 h2"> Bienvenido {{ username }} a este hermoso lugar, ¡Juntos haremos cosas increibles por el planeta!</p>
+        <p class="h3 fs-3">Has iniciado sesión exitosamente</p>
+        <a class="btn btn-primary" href="{% url 'index' %}"> Inicio </a>
+    </div>        
+    </section>
+    {% endblock %}
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

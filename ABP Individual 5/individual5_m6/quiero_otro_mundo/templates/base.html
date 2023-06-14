@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="{% static  'style.css' %}" rel="stylesheet">
+    <title>Yo Quiero Otro Mundo</title>
+</head>
+
+<body>
+    <header>
+        <header>
+            <h1><a class="link-light" href="{% url 'index' %}" style="text-decoration: none;"><img
+                        src="{% static 'images/YQOM_Logo.png' %}" alt="Logo" width="35px">Yo Quiero Otro Mundo</h1></a>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}"><i class="bi bi-house-heart"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="20" height="20" fill="currentColor" class="bi bi-house-heart"
+                                    viewBox="0 0 16 16">
+                                    <path d="M8 6.982C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982Z" />
+                                    <path
+                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                                </svg> Home </i></a> | </li>
+                    <li><a href="#about">Sobre nosotros </a> | </li>
+                    <li><a href="#services">Nuestros servicios </a> | </li>
+                    <li><a href="#contact">Contacto </a> | </li>
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'userlist' %}">Nuestros usuarios </a> | </li>
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                    <li><a href="{% url 'login' %}" class="link-success">Iniciar sesión </a> | </li>
+                    <li><a href="{% url 'register' %}" class="link-primary">Registrate! </a> | </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}" class="link-danger">Cerrar sesión</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+
+        {% block content %}
+        {% endblock%}
+
+        {% block userlist %}
+        {% endblock %}
+
+        <footer>
+            <p>
+            <div class="container-xl">
+                <div class="row align-items-start">
+                    <div class="col-4 text-start">
+                        <h5><a style="text-decoration: none; color: grey;"
+                                href="https://www.youtube.com/watch?v=dr1Dzw-bkIw">Yo quiero otro mundo</a></h5>
+                        </p>
+                        <p>Construido con amor para ayudar a nuestro planeta, nuestro mundo es UNICO y es tarea de todos
+                            contribuir con el.</p>
+                    </div>
+                    <div class="col-4 text-start">
+                        <h3>siguenos en nuestras redes sociales</h3>
+                        <a href="https://www.instagram.com/yoquierootromundo/"><i
+                                class="fab fa-instagram fs-1 link-light"></i></a>
+                    </div>
+                    <div class="col-4 text-start">
+                        <p>
+                        <section id="contact">
+                            <div class="container">
+                                <h3>Contacto</h3>
+                                <p>Si quieres formar parte de nuestro movimiento o tienes alguna pregunta, no dudes en
+                                    ponerte en contacto mediante un formulario de contacto.</p>
+                                <form>
+                                    <p>Nombre:</p>
+                                    <p><input type="text" placeholder="Ingrese su nombre"></p>
+                                    <p>Email:</p>
+                                    <p><input type="email" placeholder="Ingrese su email"></p>
+                                    <p>Mensaje:</p>
+                                    <p><textarea placeholder="Ingrese su mensaje"></textarea></p>
+                                    <button type="submit" class="btn ">Enviar</button>
+                                </form>
+                            </div>
+                        </section>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+</body>
+<!-- Scripts de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
