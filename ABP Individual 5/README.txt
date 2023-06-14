@@ -44,7 +44,7 @@ y contraseña (valida que la contraseña no posea atributos similares a informac
 
 1. Clona el repositorio de la aplicación desde GitHub:
 
-   git clone https://github.com/Leonardo-Rodenas/grupal-modulo-6
+https://github.com/PlueciToT/Modulo-6/tree/main/ABP%20Individual%205
 
 2. Accede al directorio del proyecto:
 
@@ -72,7 +72,7 @@ y contraseña (valida que la contraseña no posea atributos similares a informac
 
 ### Contribuciones
 
-¡Se agradecen las contribuciones a "Telovendo"! Si deseas colaborar, sigue estos pasos:
+¡Se agradecen las contribuciones a "quero_otro_mundo"! Si deseas colaborar, sigue estos pasos:
 
 1. Crea un fork del repositorio
 2. Crea una rama para tu nueva función o corrección de error: `git checkout -b nombre-rama`
@@ -85,4 +85,4 @@ y contraseña (valida que la contraseña no posea atributos similares a informac
 
 Si tienes alguna pregunta, problema o sugerencia, no dudes en contactarnos a través de la sección de "Issues" en GitHub o enviando un correo electrónico a soporte@telovendo.com.
 
-¡Gracias por utilizar "Telovendo"!
+¡Gracias por utilizar "quiero_otro_mundo"!
