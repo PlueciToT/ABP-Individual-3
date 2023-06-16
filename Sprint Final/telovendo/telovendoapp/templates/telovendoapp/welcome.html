@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block titulo %} Te Lo Vendo - Bienvenida {% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <div class="card m-5">
+        <div class="container text-center pt-5 mt-3 pb-5 mb-3">
+            <p class="fs-1 h2"><img src="{% static 'img/Hi.png' %}" alt="saludo" width="50px"
+                    class="align-content-start"> Bienvenido {{ username }} a Te Lo Vendo</p>
+            <p class="h4">Has iniciado sesión exitosamente</p>
+            <a class="btn btn-primary" href="{% url 'telovendo' %}">Inicio</a>
+            <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %} Te Lo Vendo - Usuarios {% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    {% block img %}
+    {% load static %}
+    <img class="p-5 img-fluid" src="{% static 'img/usuarios.png' %}" alt="imagen-izq-userList">
+    {% endblock %}
+  </div>
+  <div class="col-md-6">
+    {% block lista_usuarios %}
+    <div class="card text-left m-5 rounded-6 bg-transparent border-0">
+      <div class="card-body rounded-6">
+        <h3 class="fw-bold text-center mb-4">Nuevos Usuarios que ahora son parte de nuestra familia:</h3>
+        <ul class="list-group">
+          {% for usuario in usuarios %}
+          <li class="list-group-item">
+            {{ usuario.nombre }} {{ usuario.apellido }} | {{ usuario.correo }} | {{ usuario.telefono }} | {{ usuario.direccion }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
