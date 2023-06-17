@@ -1,4 +1,4 @@
-# ABP - Trabajo Individual 6
+# ABPro - Sprint Grupal Final Modulo 6
 
 ## Aplicación: "Telovendo" 
 
