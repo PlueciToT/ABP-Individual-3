@@ -1,0 +1,66 @@
+{% extends "base.html"%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo Quiero Otro Mundo - Inicia el cambio</title>
+    <link href="{% static  'style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    {% block content %}
+    <section id="hero">
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="card text-bg-light pt-4 pb-4 pl-3 shadow p-3 mb-5 bg-body-tertiary rounded text-start">
+                    <!-- inicia titulo de login -->
+                    <p class="h2 fs-2 card-title text-secondary">
+                        ¡Te damos la bienvenida otra vez!
+                        <br>
+                        Inicia sesión para empezar a pasar a la acción.
+                        <br>
+                        <i class="fs-6 card-title text-secondary">¿Aún no eres parte de Yo Quiero Otro Mundo?
+                            <a href="{% url 'register' %}" class="link-danger">Hazte miembro</a></i>
+                    </p>
+                    <!-- termina titulo de login -->
+                    {% if error_message %}
+                    <p>{{ error_message }}</p>
+                    {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <!-- inicia contenedor de formulario login -->
+                        <div class="container px-1">
+                            <div class="row">
+                                <div class="col-3 text-start">
+                                    <p><label for="username">Usuario:</label></p>
+                                    <p><label for="password">Contraseña:</label></p>
+                                </div>
+                                <div class="col-3 text-start">
+                                    <p><input type="text" id="username" name="username" required></p>
+                                    <p><input type="password" id="password" name="password" required></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Teremina contenedor de formulario login -->
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mr-3">
+                            <input class="btn btn-success" type="submit" value="Iniciar sesión">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+</html>
